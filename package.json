@@ -1,0 +1,57 @@
+{
+  "name": "dsh-workspace-drop",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Drag local folders into DSH to register them as workspaces.",
+  "author": "MeirinRuan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MeirinRuan/dsh-workspace-drop"
+  },
+  "homepage": "https://github.com/MeirinRuan/dsh-workspace-drop",
+  "bugs": {
+    "url": "https://github.com/MeirinRuan/dsh-workspace-drop/issues"
+  },
+  "packageManager": "pnpm@11.28.5",
+  "exports": {
+    ".": "./host.mjs",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "host.mjs",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "LICENSE",
+    "README.md",
+    "README.zh.md",
+    "docs/guide.md",
+    "docs/guide.zh.md"
+  ],
+  "engines": {
+    "dsh": "0.2.2-rc.1",
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "prepack": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-workspace-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ]
+    }
+  }
+}

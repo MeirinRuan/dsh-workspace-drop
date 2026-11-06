@@ -1,0 +1,3 @@
+- insert:
+    - id: workspace-drop
+      name: 'dsh-workspace-drop'

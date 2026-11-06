@@ -1,0 +1,7 @@
+url: https://github.com/MeirinRuan/dsh-workspace-drop
+name: dsh-workspace-drop
+category: ui
+description:
+  en: Drag local folders into the DSH desktop workspace list or workspace picker to register their existing paths as workspaces.
+  zh: 将本地文件夹拖到 DSH 桌面应用的工作区列表或选择器，即可把原有路径注册为工作区。
+tarball: https://github.com/MeirinRuan/dsh-workspace-drop/releases/latest/download/dsh-workspace-drop.tgz
